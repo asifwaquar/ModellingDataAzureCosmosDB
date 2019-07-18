@@ -125,6 +125,16 @@ Workloads uniformly distributed accross all logical pk's.
 
 * Data changes at different rates #2
 
+                  {
+                        "id": "1",
+                        "name": "Alice",
+                        "email": "alice@contoso.com",
+                        "stats":[
+                                {"TotalNumberOrders": 100}, 
+                                {"TotalAmountSpent": 550}
+                                ]
+                   }
+
 
 Number of orders, amount spent will likely change faster than email, so reference these
 
@@ -132,10 +142,19 @@ Number of orders, amount spent will likely change faster than email, so referenc
 #### When to reference #3
 
 * many : many relationships
+
+
  
 #### When to reference #4
 
 * What is referenced, is heavily referenced by many others
+
+#### Heterogenous and homogenous data 
+
+* Do I need to put my data in the same collection? Or multiple collections?
+* Homogenous: 1 type per collection
+* Heterogenous: Multiple types per collection
+* To improve performance, consider multiple types in same collection, Introduce “type” property
 
 ### e.g for embed
 
