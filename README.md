@@ -98,23 +98,21 @@ Workloads uniformly distributed accross all logical pk's.
 
 {
     "id": "1",
-    "name": "Alice",
-    "email": "alice@contoso.com",
-    "Orders": [
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "addresses": [
         {
-            "id": "Order1", 
-            "orderDate": "2018-09-18",
-                "itemsOrdered": [
-                    {"ID": 1, "ItemName": "hamburger", "Price":9.50, "Qty": 1}
-                    {"ID": 2, "ItemName": "cheeseburger", "Price":9.50, "Qty": 499}]
-                    }, 
-                    ...
-                    {
-                    "id": "OrderNfinity", 
-                    "orderDate": "2018-09-20",
-                    "itemsOrdered": [
-                    {"ID": 1, "ItemName": "hamburger", "Price":9.50, "Qty": 1}]
-            }]
+            "line1": "100 Some Street",
+            "line2": "Unit 1",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": 98012
+        }
+    ],
+    "contactDetails": [
+        {"email": "thomas@andersen.com"},
+        {"phone": "+1 555 555-5555", "extension": 5555}
+    ]
 }
 
 
@@ -151,27 +149,6 @@ JOIN Address a ON a.PersonId = p.Id
 Modelling same data in cosmos db .
 
 {
-     "id": "1",
-     "firstName": "Thomas",
-     "lastName": "Andersen",
-     "addresses": [
-        {
-            "line1": "100 Some Street",
-            "line2": "Unit 1",
-            "city": "Seattle",
-            "state": "WA",
-            "zip": 98012
-        }
-    ],
-    "contactDetails": [
-        {"email": "thomas@andersen.com"},
-        {"phone": "+1 555 555-5555", "extension": 5555}
-    ]
-}
-
-### e.g for Reference
-
-{
     "id": "1",
     "name": "What's new in the coolest Cloud",
     "summary": "A blog post by someone real famous",
@@ -184,6 +161,41 @@ Modelling same data in cosmos db .
         {"id": 1000000001, "author": "angry", "comment": "blah angry blah angry"},
         …
         {"id": ∞ + 1, "author": "bored", "comment": "oh man, will this ever end?"},
+    ]
+}
+
+
+
+### e.g for Reference
+
+Post item:
+{
+    "id": "1",
+    "name": "What's new in the coolest Cloud",
+    "summary": "A blog post by someone real famous",
+    "recentComments": [
+        {"id": 1, "author": "anon", "comment": "something useful, I'm sure"},
+        {"id": 2, "author": "bob", "comment": "wisdom from the interwebs"},
+        {"id": 3, "author": "jane", "comment": "....."}
+    ]
+}
+
+Comment items:
+{
+    "postId": "1"
+    "comments": [
+        {"id": 4, "author": "anon", "comment": "more goodness"},
+        {"id": 5, "author": "bob", "comment": "tails from the field"},
+        ...
+        {"id": 99, "author": "angry", "comment": "blah angry blah angry"}
+    ]
+},
+{
+    "postId": "1"
+    "comments": [
+        {"id": 100, "author": "anon", "comment": "yet more"},
+        ...
+        {"id": 199, "author": "bored", "comment": "will this ever end?"}
     ]
 }
 
