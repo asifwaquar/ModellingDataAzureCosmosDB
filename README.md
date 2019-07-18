@@ -2,5 +2,13 @@
 
 ### What is good partition key in COSMOS DB?
 
- ![Partiion Key](https://azurecosmosdb.github.io/CosmicNotes/images/4.png)
+A good partition key ensures well balanced partition in both terms 
+
+* Storage 
+Data should be distributed uniformly accross all logical pk's.
+
+* Throughput
+Workloads uniformly distributed accross all logical pk's.
+
+### Model your data by referencing & embedding.
 
