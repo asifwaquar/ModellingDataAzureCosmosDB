@@ -19,18 +19,24 @@ Workloads uniformly distributed accross all logical pk's.
 * “Data that is queried together, should live together” 
 
 
+Copy
 {
-  "ID": 1,
-  "ItemName": "hamburger",
-  "ItemDescription": "cheeseburger, no cheese",
-  "Category": "sandwiches",
-  "CategoryDescription": "2 pieces of bread + filling",
-  "Ingredients": [
-        {"ItemName": "bread", "calorieCount": 100, "Qty": "2 slices"},
-        {"ItemName": "lettuce", "calorieCount": 10, "Qty": "1 slice"}
-        {"ItemName": "tomato","calorieCount": 10, "Qty": "1 slice"}
-        {"ItemName": "patty", "calorieCount": 700, "Qty": "1"}
-        ]
+    "id": "1",
+    "firstName": "Thomas",
+    "lastName": "Andersen",
+    "addresses": [
+        {
+            "line1": "100 Some Street",
+            "line2": "Unit 1",
+            "city": "Seattle",
+            "state": "WA",
+            "zip": 98012
+        }
+    ],
+    "contactDetails": [
+        {"email": "thomas@andersen.com"},
+        {"phone": "+1 555 555-5555", "extension": 5555}
+    ]
 }
 
 * E.g. in Recipe, ingredients are always queried with the item 
